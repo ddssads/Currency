@@ -36,6 +36,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="NTD_To_US"
         android:text="Go"
         app:layout_constraintStart_toStartOf="@+id/NTD"
         app:layout_constraintTop_toBottomOf="@+id/edNTD" />
@@ -56,7 +57,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:text="None"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toEndOf="@+id/jp_text"
         app:layout_constraintTop_toTopOf="@+id/jp_text" />
@@ -76,7 +76,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:text="None"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/jp_text" />

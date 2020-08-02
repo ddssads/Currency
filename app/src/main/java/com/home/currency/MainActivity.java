@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edNTD;
+    EditText ntd;
     TextView us;
     TextView jp;
 
@@ -23,17 +23,14 @@ public class MainActivity extends AppCompatActivity {
         findview();
     }
     private void findview(){
-        edNTD = findViewById(R.id.edNTD);
+        ntd = findViewById(R.id.ntd);
         us = findViewById(R.id.us);
         jp = findViewById(R.id.jp);
     }
 
     public void NTD_To_US(View view){
-        String n = edNTD.getText().toString();
+        String n = ntd.getText().toString();
         Boolean nEmpty = n.isEmpty();
-        Float NTD = Float.parseFloat(n);
-        Float result_jp = NTD*3.56f;
-        Float result_us = NTD/30.9f;
         //Confirm empty
         if(nEmpty) {
             new AlertDialog.Builder(this)
@@ -42,13 +39,16 @@ public class MainActivity extends AppCompatActivity {
                     .setPositiveButton("OK",null)
                     .show();
         }else {
+            Float _ntd = Float.parseFloat(n);
+            Float result_jp = _ntd*3.56f;
+            Float result_us = _ntd/30.9f;
             new AlertDialog.Builder(this)
                     .setTitle("Result")
                     .setMessage("JPD is: " + result_jp + "\nUSD is: " + result_us)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            edNTD.setText("");
+                            ntd.setText("");
                         }
                     })
                     .show();

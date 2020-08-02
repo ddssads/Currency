@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edNTD"
+        android:id="@+id/ntd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -39,7 +39,7 @@
         android:onClick="NTD_To_US"
         android:text="Go"
         app:layout_constraintStart_toStartOf="@+id/NTD"
-        app:layout_constraintTop_toBottomOf="@+id/edNTD" />
+        app:layout_constraintTop_toBottomOf="@+id/ntd" />
 
     <TextView
         android:id="@+id/jp_text"

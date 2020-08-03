@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,18 +35,20 @@ public class MainActivity extends AppCompatActivity {
         //Confirm empty
         if(nEmpty) {
             new AlertDialog.Builder(this)
-                    .setTitle("Problem")
-                    .setMessage("Please enter your NTD amount")
-                    .setPositiveButton("OK",null)
+                    .setTitle(R.string.problem)
+                    .setMessage(R.string.plz_enter_NTD)
+                    .setPositiveButton(R.string.ok,null)
                     .show();
         }else {
             Float _ntd = Float.parseFloat(n);
             Float result_jp = _ntd*3.56f;
             Float result_us = _ntd/30.9f;
+            Toast.makeText(this,getString(R.string.jpd_is) + result_jp + "\n" + getString(R.string.usd_is) + result_us,
+                    Toast.LENGTH_LONG).show();
             new AlertDialog.Builder(this)
-                    .setTitle("Result")
-                    .setMessage("JPD is: " + result_jp + "\nUSD is: " + result_us)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    .setTitle(R.string.result)
+                    .setMessage(getString(R.string.jpd_is) + result_jp + "\n" + getString(R.string.usd_is) + result_us)
+                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             ntd.setText("");
